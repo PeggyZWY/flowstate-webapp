@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
+    <title>flowstate - flow your heart</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize-mix.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css"></head>
+    <link rel="stylesheet" href="http://lab.lepture.com/editor/editor.css" />
+<body>
+    <div class="fullpage-intro">
+        <div class="intro-wrapper">
+            <div>This may be the most dangerous app. You have to keep writing, or everything will be deleted if you stop beyond the expire time.</div>
+            <div>Now set a duration time you want to focus and the exciting expire time.</div>
+            <form class="intro">
+                <label for="remainingTime">Last for(minutes): </label>
+                <input id="remainingTime" type="text" name="remaining" type="number" required="required" checked="checked" />
+                <br />    
+                <label for="expireTime">Expires in(seconds): </label>
+                <input id="expireTime" type="text" name="expire" type="number" required="required" /> 
+                <br />   
+            </form>
+            <button class="submit">Begin</button>
+            <!-- <div>Note: you can use this app off-line.</div> -->
+        </div>
+    </div>
+    <header>
+        <ul class="header-wrapper">
+            <li>
+                <img src="img/time.png">    
+                <span id="remaining"></span>
+            </li>
+            <li>
+                <a class="img" href="index.html" alt="index">
+                <img class="heart" src="img/heart.png"></a>
+            </li>
+            <li>
+                <img src="img/bomb.png">    
+                <span id="expire"></span>
+            </li>
+        </ul>
+    </header>
+
+    <div class="main-wrapper">
+        <textarea class="main">
+        </textarea>      
+    </div>
+
+    <footer>
+        <div class="contact">
+            <a href="https://github.com/PeggyZWY" target="_blank">By ZHAO Wenyi</a>
+            |
+            <a href="https://github.com/PeggyZWY" target="_blank">GitHub</a>
+            |
+            <a href="https://peggyzwy.herokuapp.com/" target="_blank">Blog</a>
+            |
+            <a href="https://www.zhihu.com/people/mu-qing-huan" target="_blank">ZhiHu</a>
+        </div>
+    </footer>
+
+    <div class="fullpage-overlay hidden fail">
+        <div class="overlay-wrapper">
+            <p>Time's up :( <br> Be more focus next time.</p>
+            <a href="index.html">Again</a>
+        </div>
+    </div>
+
+    <div class="fullpage-overlay hidden success">
+        <div class="overlay-wrapper">
+            <p >Good job!<br />Do you want to go back to copy what you have written?</p>
+            <a class="goback" href="#">Go back</a>
+            <a href="index.html">Give up and write again</a>  
+        </div>
+    </div>
+
+    <script src="http://cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://lab.lepture.com/editor/editor.js"></script>
+    <script type="text/javascript" src="http://lab.lepture.com/editor/marked.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
