@@ -1,4 +1,4 @@
-window.onload = function() {
+$(function() {
   var isSuccess = false;
 
   // markdown editor
@@ -24,13 +24,15 @@ window.onload = function() {
   $codeMirror.css("background-color", "lightblue");
 
 
-  var remainingSet, expireSet;
+  var remainingSet, expireSet, remainingOrigin, expireOrigin;
 
   // check whether the input for time is number
   $("form.intro :input").bind("blur", function() {
     if ($(this).is("#remainingTime")) {
       if (this.value > 0) {
         remainingSet = this.value * 60 * 1000;
+        // save the initial set and prepare for users' choice to write again
+        remainingOrigin = remainingSet;
       } else {
         alert("Please input positive numbers");
       }
@@ -38,18 +40,17 @@ window.onload = function() {
     if ($(this).is("#expireTime")) {
       if (this.value > 0) {
         expireSet = this.value * 1000;
+        expireOrigin = expireSet;
       } else {
         alert("Please input positive numbers");
       }
     }
-  })
-  
+  })  
 
   $("button.submit").bind("click", function() {
     if ((typeof remainingSet) == "number" && (typeof expireSet) == "number") {
       $("div.fullpage-intro").css("display", "none");
       begin();
-      // setTimeout(begin(), 1200);
     } else {
       alert("Please input two positive numbers");
     }
@@ -66,7 +67,6 @@ window.onload = function() {
       $remainingShow.text((remainingSet / 60000).toFixed(2) + "\'");
     }
 
-    var expireOrigin = expireSet;
     $expireShow.text((expireSet / 1000).toFixed(1) + "\"");
 
 
@@ -74,11 +74,19 @@ window.onload = function() {
       var value = value - 100;
       $expireShow.text((value / 1000).toFixed(1) + "\"");
       if (value <= 0) {
-        editor.codemirror.setValue('');
-        clearInterval(timer);
-        $codeMirror.stop(true, true);
-        $("div.fullpage-overlay.fail").removeClass("hidden");
+        // if both the time equals 0 at the same time, dont't show the ".fail" overlay
+        if (remainingSet + 100 == expireSet) {
+          return false;
+        } else {
+          editor.codemirror.setValue('');
+          clearInterval(timer);
+          $codeMirror.stop(true, true);
+          if (remainingSet != expireSet) {
+            $("div.fullpage-overlay.fail").removeClass("hidden");
+          }
+        }
       }
+      return;
     }
 
     function setRemaining(value) {
@@ -88,6 +96,7 @@ window.onload = function() {
         $remainingShow.text((remainingSet / 60000).toFixed(2) + "\'");
       }
       if (value <= 0) {
+        // alert ("remaining"+value);
         clearInterval(timer);
         isSuccess = true;
         $codeMirror.stop();
@@ -115,9 +124,19 @@ window.onload = function() {
       }
       return;
     });
-
-    $(".goback").bind("click", function() {
-      $("div.fullpage-overlay").addClass("hidden");
-    })
   }
-}
+
+
+  $(".go-copy").bind("click", function() {
+    $("div.fullpage-overlay").addClass("hidden");
+  })
+
+  $(".write-again").bind("click", function() {
+    $("div.fullpage-overlay").addClass("hidden");
+    $codeMirror.css("background-color", "lightblue");
+    remainingSet = remainingOrigin;
+    expireSet = expireOrigin;
+    isSuccess = false;
+    begin();
+  })
+});

@@ -6,7 +6,7 @@
 * of course it's **free**
 * have good experiences on **all devices** 
   
-Click [flowstate-webapp](http://peggyzwy.github.io/flowstate-webapp/), follow the simple instructions and try to win the attention war.  
+Click [here](http://peggyzwy.github.io/flowstate-webapp/), follow the simple instructions and try to win the attention war.  
   
   
 ## Philosophy  
