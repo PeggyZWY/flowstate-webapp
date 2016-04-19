@@ -4,6 +4,7 @@ $(function() {
   // markdown editor
   var editor = new Editor();
   editor.render();
+  editor.codemirror.setValue('');
 
 
   // let the height of typingarea adaptive
@@ -134,6 +135,7 @@ $(function() {
   $(".write-again").bind("click", function() {
     $("div.fullpage-overlay").addClass("hidden");
     $codeMirror.css("background-color", "lightblue");
+    editor.codemirror.setValue('');
     remainingSet = remainingOrigin;
     expireSet = expireOrigin;
     isSuccess = false;
