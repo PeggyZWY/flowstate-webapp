@@ -1,4 +1,6 @@
 window.onload = function() {
+  var isSuccess = false;
+
   // markdown editor
   var editor = new Editor();
   editor.render();
@@ -87,6 +89,9 @@ window.onload = function() {
       }
       if (value <= 0) {
         clearInterval(timer);
+        isSuccess = true;
+        $codeMirror.stop();
+        $codeMirror.css("opacity", "1");
         $("div.fullpage-overlay.success").removeClass("hidden");
       }
     }
@@ -102,10 +107,13 @@ window.onload = function() {
     $codeMirror.animate({opacity:'0'}, expireOrigin);
     // remember to clear the animation queue first
     editor.codemirror.on("change", function() {
-      expireSet = expireOrigin;
-      $codeMirror.stop(true, true);
-      $codeMirror.css("opacity", "1");
-      $codeMirror.animate({opacity:'0'}, expireOrigin);
+      if (isSuccess === false) {
+        expireSet = expireOrigin;
+        $codeMirror.stop(true, true);
+        $codeMirror.css("opacity", "1");
+        $codeMirror.animate({opacity:'0'}, expireOrigin);
+      }
+      return;
     });
 
     $(".goback").bind("click", function() {
