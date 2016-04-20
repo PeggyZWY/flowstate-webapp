@@ -75,7 +75,7 @@ $(function() {
       var value = value - 100;
       $expireShow.text((value / 1000).toFixed(1) + "\"");
       if (value <= 0) {
-        // if both the time equals 0 at the same time, dont't show the ".fail" overlay
+        // if both the time equal 0 at the same time, don't show the ".fail" overlay
         if (remainingSet + 100 == expireSet) {
           return false;
         } else {
@@ -87,7 +87,6 @@ $(function() {
           }
         }
       }
-      return;
     }
 
     function setRemaining(value) {
