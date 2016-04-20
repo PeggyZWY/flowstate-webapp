@@ -58,7 +58,7 @@ $(function() {
   })
 
   var begin = function() {
-    // show the remaining time and expire time
+    // show the remaining time and expiring time
     var $remainingShow = $("#remaining")
     var $expireShow = $("#expire")
 
@@ -123,14 +123,14 @@ $(function() {
         $codeMirror.css("opacity", "1");
         $codeMirror.animate({opacity:'0'}, expireOrigin);
       }
-      return;
+      return false;
     });
   }
 
 
   $(".go-copy").bind("click", function() {
     $("div.fullpage-overlay").addClass("hidden");
-  })
+  });
 
   $(".write-again").bind("click", function() {
     $("div.fullpage-overlay").addClass("hidden");
@@ -140,5 +140,5 @@ $(function() {
     expireSet = expireOrigin;
     isSuccess = false;
     begin();
-  })
+  });
 });
