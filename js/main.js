@@ -1,10 +1,10 @@
 $(function() {
   var isSuccess = false;
 
-  // markdown editor
-  var editor = new Editor();
-  editor.render();
-  editor.codemirror.setValue('');
+  // simplemde-markdown-editor
+  // https://github.com/NextStepWebs/simplemde-markdown-editor
+  var simplemde = new SimpleMDE({ element: $("#MyID")[0] });
+  simplemde.value('');
 
 
   // let the height of typingarea adaptive
@@ -23,6 +23,7 @@ $(function() {
   $mainWrapper.height(pre);
   $codeMirror.height(pre - 120);
   $codeMirror.css("background-color", "lightblue");
+  $(".CodeMirror .cm-spell-error:not(.cm-url):not(.cm-comment):not(.cm-tag):not(.cm-word)").css("background", "red");
 
 
   var remainingSet, expireSet, remainingOrigin, expireOrigin;
@@ -79,7 +80,7 @@ $(function() {
         if (remainingSet + 100 == expireSet) {
           return false;
         } else {
-          editor.codemirror.setValue('');
+          simplemde.value('');
           clearInterval(timer);
           $codeMirror.stop(true, true);
           if (remainingSet != expireSet) {
@@ -115,7 +116,7 @@ $(function() {
     // make text gradient
     $codeMirror.animate({opacity:'0'}, expireOrigin);
     // remember to clear the animation queue first
-    editor.codemirror.on("change", function() {
+    simplemde.codemirror.on("change", function() {
       if (isSuccess === false) {
         expireSet = expireOrigin;
         $codeMirror.stop(true, true);
@@ -133,8 +134,8 @@ $(function() {
 
   $(".write-again").bind("click", function() {
     $("div.fullpage-overlay").addClass("hidden");
-    $codeMirror.css("background-color", "lightblue");
-    editor.codemirror.setValue('');
+    $codeMirror.css("opacity", "1");
+    simplemde.value('');
     remainingSet = remainingOrigin;
     expireSet = expireOrigin;
     isSuccess = false;

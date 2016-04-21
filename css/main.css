@@ -185,3 +185,10 @@ div.fullpage-overlay a, button.submit{
     word-wrap: break-word !important;
     /* word-break: break-all !important; */
 }
+/* MOD on the base of simplemde.css */
+.CodeMirror, .CodeMirror-scroll {
+    min-height: 1px;
+}
+.CodeMirror .cm-spell-error:not(.cm-url):not(.cm-comment):not(.cm-tag):not(.cm-word) {
+    background: inherit;
+}
