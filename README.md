@@ -1,7 +1,7 @@
 # flowstate-webapp  
   
 ## Introduction  
-[Flowstate](http://itunes.apple.com/us/app/flowstate/id1051600144?ls=1&mt=12) is an awesome app. However it only serves the Apple users and is not free. Now this webapp can solve all this problems.  
+[Flowstate](http://itunes.apple.com/us/app/flowstate/id1051600144?ls=1&mt=12) is an awesome app. However it only serves the Apple users and is not free. Now this WebApp can solve all this problems.  
   
 * of course it's **free**
 * have good experiences on **all devices** 
