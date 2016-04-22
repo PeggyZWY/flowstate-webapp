@@ -17,7 +17,6 @@ footer {
     position: fixed;
     bottom: 0;
     z-index: 10;
-    padding-bottom: 0.25em;
 }
 header {
     color: white;
@@ -192,12 +191,4 @@ div.fullpage-overlay a, button.submit{
 }
 .CodeMirror .cm-spell-error:not(.cm-url):not(.cm-comment):not(.cm-tag):not(.cm-word) {
     background: inherit;
-}
-.langSet {
-    font-size: 12px;
-    padding: 1px;
-    border: 1px solid grey;
-}
-.langSet:hover {
-    color: orange;
 }
