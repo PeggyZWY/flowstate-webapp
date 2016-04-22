@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="gb2312">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
     <title>flowstate - flow your heart</title>
     <link rel="stylesheet" type="text/css" href="css/normalize-mix.css">
@@ -11,17 +11,23 @@
 <body>
     <div class="fullpage-intro">
         <div class="intro-wrapper">
-            <div>This may be the most dangerous app. You have to keep writing, or everything will be deleted if you stop beyond the expiring time.</div>
-            <div>Now set the duration time you want to focus and the exciting expiring time.</div>
+            <div class="intro-text lang-1">
+                <div>This may be the most dangerous app. You have to keep writing, or everything will be erased if you stop beyond the expiring time.</div>
+                <div>Now set the duration time you want to focus and the exciting expiring time.</div>
+            </div>
             <form class="intro">
-                <label for="remainingTime">Lasts for(minutes): </label>
+                <label class="lang-2" for="remainingTime">Lasts for(minutes): </label>
                 <input id="remainingTime" type="text" name="remaining" type="number" required="required" checked="checked" />
                 <br />    
-                <label for="expireTime">Expires in(seconds): </label>
+                <label  class="lang-3" for="expireTime">Expires in(seconds): </label>
                 <input id="expireTime" type="text" name="expire" type="number" required="required" /> 
                 <br />   
             </form>
-            <button class="submit">Begin</button>
+            <button class="submit lang-4">Begin</button>
+            <br />
+            <span class="langSet" name="english">English</span>
+            <span class="langSet" name="chinese">中文</span>
+            <!-- <span class="langSet" name="japanese">日本語</span> -->
         </div>
     </div>
     <header>
@@ -31,7 +37,7 @@
                 <span id="remaining"></span>
             </li>
             <li>
-                <a class="img" href="index.html" alt="index">
+                <a class="img" href="" alt="index">
                 <img class="heart" src="img/heart.png"></a>
             </li>
             <li>
@@ -60,18 +66,26 @@
 
     <div class="fullpage-overlay hidden fail">
         <div class="overlay-wrapper">
-            <p>Time's up :( <br> Be more focus next time.</p>
-            <a class="write-again" href="#">Again</a>
-            <a href="index.html">Reset time</a> 
+            <p class="lang-5">Time's up :( <br> Be more focus next time.</p>
+            <a class="write-again lang-6" href="#">Again</a>
+            <a class="lang-7" href="index.html">Reset time</a>
+            <br /> 
+            <span class="langSet" name="english">English</span>
+            <span class="langSet" name="chinese">中文</span>
+            <!-- <span class="langSet" name="japanese">日本語</span> -->
         </div>
     </div>
 
     <div class="fullpage-overlay hidden success">
         <div class="overlay-wrapper">
-            <p >Good job!<br />Do you want to go back to copy what you have written?</p>
-            <a class="go-copy" href="#">Go back to copy</a>
-            <a class="write-again" href="#">Give up</a>  
-            <a href="index.html">Reset time</a>  
+            <p class="lang-8">Good job!<br />Do you want to go back to copy what you have written?</p>
+            <a class="go-copy lang-9" href="#">Go back to copy</a>
+            <a class="write-again lang-8" href="#">Give up</a>  
+            <a class="lang-7" href="index.html">Reset time</a>
+            <br />  
+            <span class="langSet" name="english">English</span>
+            <span class="langSet" name="chinese">中文</span>
+            <!-- <span class="langSet" name="japanese">日本語</span> -->
         </div>
     </div>
 
