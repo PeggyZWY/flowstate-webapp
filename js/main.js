@@ -1,4 +1,5 @@
 $(function() {
+  'use strict';
   var isSuccess = false;
   var lang;
 
@@ -6,12 +7,12 @@ $(function() {
   /** ------------------------
    *
    * multi-language
-   * 
+   *
    * ------------------------ */
   var langDict = {
-    "english": {
+    english: {
       "lang-1": "<div>This may be the most dangerous app. You have to keep writing, or everything will be erased if you stop beyond the expiring time.</div><div>Now set the duration time you want to focus and the exciting expiring time.</div>",
-      "lang-2": "Lasts for(minutes):", 
+      "lang-2": "Lasts for(minutes):",
       "lang-3": "Expires in(seconds):",
       "lang-4": "Begin",
       "lang-5": "Time's up :( <br> Be more focus next time.",
@@ -21,10 +22,10 @@ $(function() {
       "lang-9": "Go back to copy",
       "lang-10": "Give up"
     },
-    "chinese": {
+    chinese: {
       "lang-1": "<div>这也许是世界上最危险的写作应用：在你设定的时间段内，如果你停止输入文字超过设定的间隔时间，之前写下的所有内容都会消失。</div><div>现在请设定持续时间段和间隔时间。</div>",
-      "lang-2": "持续时间段：",
-      "lang-3": "间隔时间：",
+      "lang-2": "持续时间（分）：",
+      "lang-3": "间隔时间（秒）：",
       "lang-4": "开始",
       "lang-5": "时间到 _(:3 」∠)_ <br> 下次要更加专心哦~",
       "lang-6": "再来一次",
@@ -33,17 +34,17 @@ $(function() {
       "lang-9": "回去复制",
       "lang-10": "我要重写"
     },
-    "japanese": {
-      "lang-1": "",
-      "lang-2": "持続時間:",
-      "lang-3": "間隔時間：",
-      "lang-4": "開始",
-      "lang-5": "时间到 _(:3 」∠)_ <br> 下次要更加专心哦~",
-      "lang-6": "再来一次",
-      "lang-7": "重设时间",
-      "lang-8": "赞√<br />你想回去复制刚刚写的内容吗？",
-      "lang-9": "回去复制",
-      "lang-10": "我要重写"
+    japanese: {
+      "lang-1": "<div>これは世界中の一番危ないアプリかもしれません：あなたのセッティングした間には、書き続けなければなりません。もしそうでなく、全ての入力したデータは削除されます。</div><div>今、持続時間と制限時間をセッティングしましょう！</div>",
+      "lang-2": "持続時間（分）：",
+      "lang-3": "制限時間（秒）：",
+      "lang-4": "スタート",
+      "lang-5": "時間切れ _(:3 」∠)_ <br> 今度は頑張ってくださいね～",
+      "lang-6": "もう一度",
+      "lang-7": "リセット",
+      "lang-8": "すっごい√<br />戻ってデータを保存していいですか",
+      "lang-9": "戻る",
+      "lang-10": "書き直したい"
     }
   };
 
@@ -72,9 +73,11 @@ $(function() {
    *
    * simplemde-markdown-editor
    * https://github.com/NextStepWebs/simplemde-markdown-editor
-   * 
+   *
    * ------------------------ */
-  var simplemde = new SimpleMDE({ element: $("#MyID")[0] });
+  var simplemde = new SimpleMDE({
+    element: $("#MyID")[0]
+  });
   simplemde.value('');
 
   // let the height of typingarea adaptive
@@ -84,8 +87,8 @@ $(function() {
 
   var $footer = $("footer");
   var $footerHeight = $footer.height();
-  
-  var $mainWrapper = $(".main-wrapper"); 
+
+  var $mainWrapper = $(".main-wrapper");
 
   var $codeMirror = $(".CodeMirror");
 
@@ -99,7 +102,7 @@ $(function() {
   /** ------------------------
    *
    * timer
-   * 
+   *
    * ------------------------ */
   var remainingSet, expireSet, remainingOrigin, expireOrigin;
 
@@ -122,7 +125,7 @@ $(function() {
         alert("Please input positive numbers");
       }
     }
-  })  
+  })
 
   $("button.submit").bind("click", function() {
     if ((typeof remainingSet) == "number" && (typeof expireSet) == "number") {
@@ -181,7 +184,7 @@ $(function() {
       }
     }
 
-    var timer = setInterval(function(){
+    var timer = setInterval(function() {
       remainingSet = remainingSet - 100;
       setExpire(expireSet);
       setRemaining(remainingSet);
@@ -189,14 +192,18 @@ $(function() {
     }, 100);
 
     // make text gradient
-    $codeMirror.animate({opacity:'0'}, expireOrigin);
+    $codeMirror.animate({
+      opacity: '0'
+    }, expireOrigin);
     // remember to clear the animation queue first
     simplemde.codemirror.on("change", function() {
       if (isSuccess === false) {
         expireSet = expireOrigin;
         $codeMirror.stop(true, true);
         $codeMirror.css("opacity", "1");
-        $codeMirror.animate({opacity:'0'}, expireOrigin);
+        $codeMirror.animate({
+          opacity: '0'
+        }, expireOrigin);
       }
       return false;
     });
@@ -207,7 +214,7 @@ $(function() {
   /** ------------------------
    *
    * overlay (success or fail)
-   * 
+   *
    * ------------------------ */
   $(".go-copy").bind("click", function() {
     $("div.fullpage-overlay").addClass("hidden");
