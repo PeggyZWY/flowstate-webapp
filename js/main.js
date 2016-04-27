@@ -18,7 +18,7 @@ $(function() {
       "lang-5": "Time's up :( <br> Be more focus next time.",
       "lang-6": "Again",
       "lang-7": "Reset time",
-      "lang-8": "Good job!<br />Do you want to go back to copy what you have written?",
+      "lang-8": "Good job!<br />Would you like to go back and copy what you have written?",
       "lang-9": "Go back to copy",
       "lang-10": "Give up"
     },
