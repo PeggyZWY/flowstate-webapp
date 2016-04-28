@@ -6,9 +6,6 @@ html, body {
     word-wrap: break-word;
     /* word-break: break-all; */
 }
-body {
-    font-family: Droid Sans, Dejavu Sans, Microsoft Yahei, sans-serif;
-}
 header, footer {
     width: 100%;
     /* background-color: grey; */

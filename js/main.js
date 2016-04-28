@@ -145,17 +145,17 @@ $(function() {
     var $expireShow = $('#expire')
 
     if (remainingSet <= 60000) {
-      $remainingShow.text((remainingSet / 1000).toFixed(1) + '\'');
+      $remainingShow.text((remainingSet / 1000).toFixed(1) + '\"');
     } else {
       $remainingShow.text((remainingSet / 60000).toFixed(2) + '\'');
     }
 
-    $expireShow.text((expireSet / 1000).toFixed(1) + '\'');
+    $expireShow.text((expireSet / 1000).toFixed(1) + '\"');
 
 
     function setExpire(value) {
       var value = value - 100;
-      $expireShow.text((value / 1000).toFixed(1) + '\'');
+      $expireShow.text((value / 1000).toFixed(1) + '\"');
       if (value <= 0) {
         // if both the time equal 0 at the same time, don't show the '.fail' overlay
         if (remainingSet + 100 == expireSet) {
@@ -173,7 +173,7 @@ $(function() {
 
     function setRemaining(value) {
       if (value <= 60000) {
-        $remainingShow.text((remainingSet / 1000).toFixed(1) + '\'');
+        $remainingShow.text((remainingSet / 1000).toFixed(1) + '\"');
       } else {
         $remainingShow.text((remainingSet / 60000).toFixed(2) + '\'');
       }
