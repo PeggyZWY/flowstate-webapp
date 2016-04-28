@@ -6,6 +6,9 @@ html, body {
     word-wrap: break-word;
     /* word-break: break-all; */
 }
+body {
+    font-family: Droid Sans, Dejavu Sans, Microsoft Yahei, sans-serif;
+}
 header, footer {
     width: 100%;
     /* background-color: grey; */
@@ -22,7 +25,7 @@ footer {
 header {
     color: white;
 }
-footer div, footer a{
+footer div, footer a {
     color: black;
 }
 header ul {
@@ -41,12 +44,12 @@ header ul li {
         padding: 0 28px;
     }
 }
-@media screen and (min-width: 421px) { 
+@media screen and (min-width: 421px) {
     header ul li img.heart {
         padding: 0 70px;
     }
 }
-@media screen and (min-width: 900px) { 
+@media screen and (min-width: 900px) {
     header ul li img.heart {
         padding: 0 200px;
     }
@@ -60,7 +63,7 @@ ul, li {
     /* border: 1px solid black; */
 }
 footer a {
-    white-space: pre-wrap; 
+    white-space: pre-wrap;
     font-size: 0.8em;
 }
 footer div {
@@ -85,9 +88,9 @@ header img.heart {
     width: 80%;
     background-color: white;
     margin: 0 auto;
-/*     position: fixed;
+    /*     position: fixed;
     z-index: 11;
-    top: 50%; 
+    top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
@@ -97,7 +100,7 @@ header img.heart {
     /* padding: 0 10px; */
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 @media screen and (max-width: 500px) {
     .main-wrapper {
@@ -108,7 +111,7 @@ header img.heart {
     margin: 0 auto;
     width: 100%;
     height: 100%;
-    overflow: scroll;        
+    overflow: scroll;
     white-space: pre-wrap;
     display: none;
 }
@@ -128,7 +131,7 @@ div.intro-wrapper, div.overlay-wrapper {
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
 }
 div.intro-wrapper div {
     line-height: 1.2;
@@ -152,7 +155,7 @@ div.fullpage-intro, div.fullpage-overlay {
     width: 100%;
     height: 100%;
     position: fixed;
-    top: 50%; 
+    top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
@@ -167,7 +170,7 @@ div.fullpage-intro, div.fullpage-overlay {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-div.fullpage-overlay a, button.submit{
+div.fullpage-overlay a, button.submit {
     display: inline-block;
     color: black;
     text-decoration: none;
@@ -182,11 +185,13 @@ div.fullpage-overlay a, button.submit{
 }
 .CodeMirror pre, .CodeMirror-wrap pre, .CodeMirror-scroll, .CodeMirror-code pre {
     display: block !important;
-    white-space: pre-wrap !important; 
+    white-space: pre-wrap !important;
     word-wrap: break-word !important;
     /* word-break: break-all !important; */
 }
+
 /* MOD on the base of simplemde.css */
+
 .CodeMirror, .CodeMirror-scroll {
     min-height: 1px;
 }
