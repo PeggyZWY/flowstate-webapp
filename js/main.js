@@ -1,7 +1,14 @@
 $(function() {
   'use strict';
-  var isSuccess = false;
-  var lang;
+  var isSuccess = false,
+      lang;
+
+  // confirmation before page's unloading
+  window.addEventListener("beforeunload", function() {
+    var message = "Are you sure to leave?";
+    event.returnValue = message; // for IE & FF
+    return message; // for Safari & Chrome
+  }, false);
 
 
   /** ------------------------
@@ -96,6 +103,13 @@ $(function() {
   $mainWrapper.height(pre);
   $codeMirror.height(pre - 120);
   $codeMirror.css("background-color", "lightblue");
+
+  // resize the height of input area when user resizes the height of browser
+  window.addEventListener("resize", function() {
+    var pre = window.innerHeight - $headerHeight - $footerHeight;
+    $mainWrapper.height(pre);
+    $codeMirror.height(pre - 120);;
+  }, false);
 
 
 
@@ -196,7 +210,8 @@ $(function() {
       opacity: '0'
     }, expireOrigin);
     // remember to clear the animation queue first
-    simplemde.codemirror.on("change", function() {
+    // change the event from "change" to "keydown"
+    simplemde.codemirror.on("keydown", function() {
       if (isSuccess === false) {
         expireSet = expireOrigin;
         $codeMirror.stop(true, true);
