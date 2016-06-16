@@ -3,12 +3,12 @@ $(function() {
   var isSuccess = false,
       lang;
 
-  // confirmation before page's unloading
-  window.addEventListener("beforeunload", function() {
-    var message = "Are you sure to leave?";
-    event.returnValue = message; // for IE & FF
-    return message; // for Safari & Chrome
-  }, false);
+  // // confirmation before page's unloading
+  // window.addEventListener("beforeunload", function() {
+  //   var message = "Are you sure to leave?";
+  //   event.returnValue = message; // for IE & FF
+  //   return message; // for Safari & Chrome
+  // }, false);
 
 
   /** ------------------------
