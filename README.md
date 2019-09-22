@@ -13,5 +13,6 @@ Click [here](http://peggyzwy.github.io/flowstate-webapp/), follow the simple ins
 > Flowstate is guided by a simple philosophy: flow, then react. It is the first writing tool to emphasize the distinction between writing and editing. Unlike other writing programs, Flowstate features a sacred space for initial creation, with rigid laws enlisted to unleash a person’s thoughts, feelings and ideas like water.  
   
     
-
+## flowstate-react  
+Go to the `flowstate-react/` directory and flow the instructions to start the app.
  
