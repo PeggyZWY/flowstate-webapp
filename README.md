@@ -14,5 +14,5 @@ Click [here](http://peggyzwy.github.io/flowstate-webapp/), follow the simple ins
   
     
 ## flowstate-react  
-Go to the `flowstate-react/` directory and flow the instructions to start the app.
+Go to the `flowstate-react/` directory and follow the instructions to start the app.
  

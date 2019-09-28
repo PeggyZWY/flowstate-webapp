@@ -1,3 +1,6 @@
+## Technologies Used  
+React + Redux + react-redux + Immutable.js + react-router-dom + styled-components
+  
 ## Start 
   
 ### 1. Install modules  
