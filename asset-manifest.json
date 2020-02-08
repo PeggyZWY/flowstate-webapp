@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.js": "/flowstate-webapp/static/js/main.ed6db2ed.chunk.js",
+    "main.js.map": "/flowstate-webapp/static/js/main.ed6db2ed.chunk.js.map",
+    "runtime~main.js": "/flowstate-webapp/static/js/runtime~main.f53e0c82.js",
+    "runtime~main.js.map": "/flowstate-webapp/static/js/runtime~main.f53e0c82.js.map",
+    "static/css/2.631f06b7.chunk.css": "/flowstate-webapp/static/css/2.631f06b7.chunk.css",
+    "static/js/2.e48b9b84.chunk.js": "/flowstate-webapp/static/js/2.e48b9b84.chunk.js",
+    "static/js/2.e48b9b84.chunk.js.map": "/flowstate-webapp/static/js/2.e48b9b84.chunk.js.map",
+    "index.html": "/flowstate-webapp/index.html",
+    "precache-manifest.f5dc58c778fc31fef715ecd4bd7d2fe8.js": "/flowstate-webapp/precache-manifest.f5dc58c778fc31fef715ecd4bd7d2fe8.js",
+    "service-worker.js": "/flowstate-webapp/service-worker.js",
+    "static/css/2.631f06b7.chunk.css.map": "/flowstate-webapp/static/css/2.631f06b7.chunk.css.map"
+  }
+}
