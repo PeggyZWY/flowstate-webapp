@@ -1,0 +1,203 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    position: relative;
+    word-wrap: break-word;
+    /* word-break: break-all; */
+}
+header, footer {
+    width: 100%;
+    /* background-color: grey; */
+    padding: 0.625em 0;
+    text-align: center;
+    overflow: hidden;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+    padding-bottom: 0.25em;
+}
+header {
+    color: white;
+}
+footer div, footer a{
+    color: black;
+}
+header ul {
+    float: left;
+    position: relative;
+    left: 50%;
+}
+header ul li {
+    float: left;
+    position: relative;
+    right: 50%;
+    vertical-align: middle;
+}
+@media screen and (max-width: 420px) {
+    header ul li img.heart {
+        padding: 0 28px;
+    }
+}
+@media screen and (min-width: 421px) { 
+    header ul li img.heart {
+        padding: 0 70px;
+    }
+}
+@media screen and (min-width: 900px) { 
+    header ul li img.heart {
+        padding: 0 200px;
+    }
+}
+header ul li span {
+    vertical-align: super;
+    font-size: 1.5em;
+}
+ul, li {
+    list-style: none;
+    /* border: 1px solid black; */
+}
+footer a {
+    white-space: pre-wrap; 
+    font-size: 0.8em;
+}
+footer div {
+    font-size: 0.8em;
+}
+a:hover {
+    text-decoration: none;
+    color: orange;
+}
+header img {
+    height: 2em;
+}
+header img.heart {
+    height: 2.5em;
+}
+.header-wrapper {
+    float: left;
+    position: relative;
+    left: 50%;
+}
+.main-wrapper {
+    width: 80%;
+    background-color: white;
+    margin: 0 auto;
+/*     position: fixed;
+    z-index: 11;
+    top: 50%; 
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
+    /* padding: 0 10px; */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; 
+}
+@media screen and (max-width: 500px) {
+    .main-wrapper {
+        width: 100%;
+    }
+}
+.main {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;        
+    white-space: pre-wrap;
+    display: none;
+}
+div.intro-wrapper, div.overlay-wrapper {
+    background-color: white;
+    opacity: 1;
+    width: 30%;
+    min-width: 300px;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    padding: 20px;
+    line-height: 2;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); 
+}
+div.intro-wrapper div {
+    line-height: 1.2;
+    padding-bottom: 0.675em;
+}
+div.intro-wrapper form {
+    /* text-align: left; */
+    margin: 0 auto;
+}
+.intro-wrapper label {
+    width: 12em;
+    float: left;
+    text-align: left;
+    margin: 10px 0;
+}
+.intro-wrapper input {
+    margin: 10px 0;
+    width: 6em;
+}
+div.fullpage-intro, div.fullpage-overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 50%; 
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    background-color: #333;
+    opacity: 0.7;
+    padding: 20%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+div.fullpage-overlay a, button.submit{
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+    border: 2px solid orange;
+    border-radius: 15px;
+    padding: 0em 0.8em;
+    font-size: 1em;
+    background: white;
+}
+.hidden {
+    display: none;
+}
+.CodeMirror pre, .CodeMirror-wrap pre, .CodeMirror-scroll, .CodeMirror-code pre {
+    display: block !important;
+    white-space: pre-wrap !important; 
+    word-wrap: break-word !important;
+    /* word-break: break-all !important; */
+}
+/* MOD on the base of simplemde.css */
+.CodeMirror, .CodeMirror-scroll {
+    min-height: 1px;
+}
+.CodeMirror .cm-spell-error:not(.cm-url):not(.cm-comment):not(.cm-tag):not(.cm-word) {
+    background: inherit;
+}
+.langSet {
+    font-size: 12px;
+    padding: 1px;
+    border: 1px solid grey;
+}
+.langSet:hover {
+    color: orange;
+}

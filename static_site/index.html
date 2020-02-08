@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+    <title>flowstate - flow your heart</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize-mix.css">
+    <link rel="stylesheet" type="text/css" href="css/simplemde-1.11.2.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+    <div class="fullpage-intro">
+        <div class="intro-wrapper">
+            <div class="intro-text lang-1">
+                <div>This may be the most dangerous app. You have to keep writing, or everything will be erased if you stop beyond the expiring time.</div>
+                <div>Now set the duration time you want to focus and the exciting expiring time.</div>
+            </div>
+            <form class="intro">
+                <label class="lang-2" for="remainingTime">Lasts for(minutes): </label>
+                <input id="remainingTime" type="text" name="remaining" type="number" required="required" checked="checked" />
+                <br />
+                <label class="lang-3" for="expireTime">Expires in(seconds): </label>
+                <input id="expireTime" type="text" name="expire" type="number" required="required" />
+                <br />
+            </form>
+            <button class="submit lang-4">Begin</button>
+            <br />
+            <span class="langSet" name="english">English</span>
+            <span class="langSet" name="chinese">中文</span>
+            <span class="langSet" name="japanese">日本語</span>
+        </div>
+    </div>
+    <header>
+        <ul class="header-wrapper">
+            <li>
+                <img src="img/time.png">
+                <span id="remaining"></span>
+            </li>
+            <li>
+                <a class="img" href="" alt="index">
+                    <img class="heart" src="img/heart.png"></a>
+            </li>
+            <li>
+                <img src="img/bomb.png">
+                <span id="expire"></span>
+            </li>
+        </ul>
+    </header>
+
+    <div class="main-wrapper">
+        <textarea class="main" id="MyID">
+        </textarea>
+    </div>
+
+    <footer>
+        <div class="contact">
+            <a href="https://github.com/PeggyZWY" target="_blank">By Wenyi Zhao</a> |
+            <a href="https://github.com/PeggyZWY" target="_blank">GitHub</a> |
+            <a href="https://www.zhihu.com/people/mu-qing-huan" target="_blank">ZhiHu</a>
+        </div>
+    </footer>
+
+    <div class="fullpage-overlay hidden fail">
+        <div class="overlay-wrapper">
+            <p class="lang-5">Time's up :(
+                <br> Be more concentrated next time.</p>
+            <a class="write-again lang-6" href="#">Again</a>
+            <a class="lang-7" href="index.html">Reset time</a>
+            <br />
+            <span class="langSet" name="english">English</span>
+            <span class="langSet" name="chinese">中文</span>
+            <span class="langSet" name="japanese">日本語</span>
+        </div>
+    </div>
+
+    <div class="fullpage-overlay hidden success">
+        <div class="overlay-wrapper">
+            <p class="lang-8">Good job!
+                <br />Would you like to go back and copy what you have written?</p>
+            <a class="go-copy lang-9" href="#">Go back to copy</a>
+            <a class="write-again lang-10" href="#">Give up</a>
+            <a class="lang-7" href="index.html">Reset time</a>
+            <br />
+            <span class="langSet" name="english">English</span>
+            <span class="langSet" name="chinese">中文</span>
+            <span class="langSet" name="japanese">日本語</span>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="js/simplemde.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>
