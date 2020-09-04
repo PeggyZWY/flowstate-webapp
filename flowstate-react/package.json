@@ -12,7 +12,7 @@
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.1.1",
     "redux": "^4.0.4",
-    "showdown": "^1.9.0",
+    "showdown": "^1.9.1",
     "styled-components": "^4.3.2"
   },
   "scripts": {
